@@ -1,7 +1,7 @@
 :: Autor: https://t.me/Azriel_7589
 @echo off
 chcp 65001 > nul
-mode con: cols=80 lines=25
+mode con: cols=90 lines=25
 
 :: File Loader
 set "current_dir=%~dp0"
@@ -29,11 +29,6 @@ if not %errorlevel% EQU 0 (
     echo:
     pause
     powershell -Command "Start-Process '%~f0' -Verb RunAs"
-    exit /b
-)
-if not "%__already_high__%" EQU "1" (
-    set "__already_high__=1"
-    start /high cmd /c "%~f0" %*
     exit /b
 )
 
