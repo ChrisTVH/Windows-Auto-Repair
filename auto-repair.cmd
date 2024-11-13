@@ -1,7 +1,6 @@
 :: Autor: https://t.me/Azriel_7589
 @echo off
 chcp 65001 > nul
-mode con: cols=90 lines=25
 
 :: File Loader
 set "current_dir=%~dp0"
@@ -94,17 +93,21 @@ if %_erl% EQU 3 (
 )
 if %_erl% EQU 4 (
     color %repairMenuTheme%
-    TITLE %options% DISM /online /cleanup-image /scanhealth
+    TITLE %options% DISM /Online /Cleanup-Image /CheckHealth
     cls
-    DISM /online /cleanup-image /scanhealth
+    DISM /Online /Cleanup-Image /CheckHealth
+    TITLE %options% DISM /Online /Cleanup-Image /ScanHealth
+    DISM /Online /Cleanup-Image /ScanHealth
     pause
     cls
     goto MainMenu
 )
 if %_erl% EQU 5 (
     color %repairMenuTheme%
-    TITLE %options% DISM /Online /Cleanup-Image /startComponentCleanup
+    TITLE %options% DISM /online /cleanup-image /startcomponentcleanup /resetbase
     cls
+    DISM /online /cleanup-image /startcomponentcleanup /resetbase
+    TITLE %options% DISM /Online /Cleanup-Image /startComponentCleanup
     DISM /Online /Cleanup-Image /startComponentCleanup
     pause
     cls
