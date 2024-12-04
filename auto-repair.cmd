@@ -14,6 +14,7 @@ set "lang_file=%lang_dir%\%lang%.properties"
 for /f "usebackq tokens=1,* delims==" %%A in ("%lang_file%") do (
     set "%%A=%%B"
 )
+cls
 
 :: Verify if the requirements for optimal use are met, if they are not met, they will be self-applied.
 color %permissionWarningTheme%
